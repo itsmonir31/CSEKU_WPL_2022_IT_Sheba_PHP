@@ -168,7 +168,7 @@ h2.heading {
 .controls button:hover + label,
 .controls select:focus + label,
 .controls select:hover + label {
-  color: #bdcc00;
+  color: #01b3bf;
   cursor: text;
 }
 
@@ -214,7 +214,7 @@ h2.heading {
 
 button {
   cursor: pointer;
-  background-color: #1b3d4d;
+  background-color: #01b3bf;
   border: none;
   color: #fff;
   padding: 12px 0;

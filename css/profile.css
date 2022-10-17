@@ -4,16 +4,24 @@
 }
 
 body {
-  background: #f1f3fa;
+  background: #b8f4fc3b;
 }
 
 /* Profile container */
 .profile {
   margin: 20px 0;
+  display: flex;
 }
 .container {
   width: 100vw;
   display: flex;
+}
+
+.container_ {
+  margin-top: 30px;
+  max-width: 65vw;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .column3 {
@@ -22,12 +30,14 @@ body {
 
 .info_sidebar {
   margin-left: 20px;
+  margin-right: 20px;
 }
 /* Profile sidebar */
 .profile-sidebar {
   margin-left: 20px;
   padding: 20px 0 10px 0;
   background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
 }
 
 .profile_userpic {
@@ -228,13 +238,13 @@ body {
 }
 
 /* POPUP */
-body {
+/* body {
   font-family: Arial, sans-serif;
   background: url(http://www.shukatsu-note.com/wp-content/uploads/2014/12/computer-564136_1280.jpg)
     no-repeat;
   background-size: cover;
   height: 100vh;
-}
+} */
 
 h1 {
   text-align: center;

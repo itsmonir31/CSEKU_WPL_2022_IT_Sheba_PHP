@@ -48,17 +48,18 @@
                 <?php echo $rows["details"]?>
             </p>
             <br><br>
-            <p class="job-toggle">view job</p>
+            <a href="./job_view.php?id=<?php echo $rows["job_id"]?>"><p class="job-toggle" id="viewjob">view job</p></a>
+            <!-- <script>
+        document.getElementById("viewjob").addEventListener("click", function(){ 
+            alert("Hello World!"); 
+            // window.location.href = "job_view.php";
+        });
+    </script> -->
         </div>  
         <?php } ?>
     </div>
     <script scr="jquery.min.js"></script>
     <script scr="jquery.collapser.min.js"></script>
-    <script>
-        $('.job_desc').collapser({
-            mode: "words",
-            truncate: 10
-        });
-    </script>
+    
   </body>
 </html>

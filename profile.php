@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./css/alert.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/bid_list.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/7a76d52362.js" crossorigin="anonymous"></script>
 </head>
@@ -200,112 +201,156 @@
             </div>
             <!-- edit profile pop up -->
 
-
-
-
-
-
-
             <div class="right_side">
-                <!-- 
-         =================
-           job card 1
-         =================
-    -->
-                <div class="card card-1">
-                    <div class="work-rate">
-                        <p>hourly</p>
-                        <p>$55 / hr</p>
-                    </div>
-                    <div class="pos-nd-loc">
-                        <p class="job-title">UI/UX Designer</p>
-                        <p class="location">Epic Coders</p>
-                    </div>
-                    <div class="tags">
-                        <button>UI</button>
-                        <button>UX</button>
-                        <button>illustrator</button>
-                        <button>web design</button>
-                        <button>+4</button>
-                    </div>
-                    <p class="job-desc">
-                        We are looking for an experienced UI and UX designer to work on our
-                        new projects...
-                    </p>
-                    <p class="job-toggle">view job</p>
-                </div>
-                <!-- =================
-         job card 2
-         =================
-    -->
-                <div class="card card-2">
-                    <div class="work-rate">
-                        <p>part-time</p>
-                        <p>$32 / hr</p>
-                    </div>
-                    <div class="pos-nd-loc">
-                        <p class="job-title">Back-End Developer</p>
-                        <p class="location">Blackstone</p>
-                    </div>
-                    <div class="tags">
-                        <button>node.js</button>
-                        <button>php</button>
-                        <button>design pattern</button>
-                        <button>+4</button>
-                    </div>
-                    <p class="job-desc">
-                        Looking for an experinced back-end developer to work with knowledge on
-                        node.js, php..
-                    </p>
-                    <p class="job-toggle">view job</p>
-                </div>
-                <div class="card card-1">
-                    <div class="work-rate">
-                        <p>hourly</p>
-                        <p>$55 / hr</p>
-                    </div>
-                    <div class="pos-nd-loc">
-                        <p class="job-title">UI/UX Designer</p>
-                        <p class="location">Epic Coders</p>
-                    </div>
-                    <div class="tags">
-                        <button>UI</button>
-                        <button>UX</button>
-                        <button>illustrator</button>
-                        <button>web design</button>
-                        <button>+4</button>
-                    </div>
-                    <p class="job-desc">
-                        We are looking for an experienced UI and UX designer to work on our
-                        new projects...
-                    </p>
-                    <p class="job-toggle">view job</p>
-                </div>
-                <div class="card card-1">
-                    <div class="work-rate">
-                        <p>hourly</p>
-                        <p>$55 / hr</p>
-                    </div>
-                    <div class="pos-nd-loc">
-                        <p class="job-title">UI/UX Designer</p>
-                        <p class="location">Epic Coders</p>
-                    </div>
-                    <div class="tags">
-                        <button>UI</button>
-                        <button>UX</button>
-                        <button>illustrator</button>
-                        <button>web design</button>
-                        <button>+4</button>
-                    </div>
-                    <p class="job-desc">
-                        We are looking for an experienced UI and UX designer to work on our
-                        new projects...
-                    </p>
-                    <p class="job-toggle">view job</p>
-                </div>
-            </div>
+                <div class="bid_list">
+                    <div class="container_">
+  <h2>Scrolling Card UI With Flexbox</h2>
+  <ul class="cards">
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 1</h3>
+        <div class="card-content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
-    </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 2</h3>
+        <div class="card-content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repudiandae magnam harum natus fuga et repellat in maiores.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 3</h3>
+        <div class="card-content">
+          <p>Phasellus ultrices lorem vel bibendum ultricies. In hendrerit nulla a ante dapibus pulvinar eu eget quam.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 4</h3>
+        <div class="card-content">
+          <p>Aenean posuere mauris quam, pellentesque auctor mi bibendum nec. Sed scelerisque lacus nisi, quis auctor lorem ornare vel.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 5</h3>
+        <div class="card-content">
+          <p>Vestibulum pharetra fringilla felis sit amet tempor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras et arcu sit amet est consequat feugiat. Nam ut sapien pulvinar.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 6</h3>
+        <div class="card-content">
+          <p>Donec ut tincidunt nisl. Vivamus eget eros id elit feugiat mollis. Nam sed sem quis libero finibus tempor.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 7</h3>
+        <div class="card-content">
+          <p>Aliquam eget nisl auctor, sollicitudin ipsum at, dignissim ligula. Donec tincidunt in elit et pellentesque. Integer posuere metus ac massa mollis euismod.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 8</h3>
+        <div class="card-content">
+          <p> Vivamus eget eros id elit feugiat mollis. Nam sed sem quis libero finibus tempor.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 9</h3>
+        <div class="card-content">
+          <p>Duis id congue turpis. Donec sodales porta felis, nec ultricies ante. Nam placerat vitae metus sit amet tempor. Aliquam ac dictum est.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 10</h3>
+        <div class="card-content">
+          <p>Pellentesque eget eros eget justo efficitur fermentum.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 11</h3>
+        <div class="card-content">
+          <p>Phasellus posuere nec nibh ut tincidunt. Aenean mollis turpis non eros posuere, at luctus leo hendrerit. Integer non libero sapien.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+    <li class="card">
+      <div>
+        <h3 class="card-title">Service 12</h3>
+        <div class="card-content">
+          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum ornare metus ac lectus scelerisque volutpat.</p>
+        </div>
+      </div>
+      <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div>
+    </li>
+  </ul>
+</div>
+                </div>
+
+
+            </div> <!-- right side end -->
+        </div>
+
+
+
+
+
+        
     </div>
 </body>
 
