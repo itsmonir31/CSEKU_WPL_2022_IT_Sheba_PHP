@@ -1,0 +1,227 @@
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --bg: #f8f8f8;
+    --grey: #999;
+    --dark: #1a1a1a;
+    --light: #e6e6e6;
+    --wrapper: 1000px;
+    --blue: #80f3a6;
+}
+
+.main_div{
+    display: flex;
+}
+
+.left_div{
+    padding: 15px;
+    width: 35%;
+    height: 100vh;
+    border-right: 1px solid var(--grey);
+    /* background-color: aquamarine; */
+    /* display: flex; */
+}
+
+
+.search_card{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    /* background-color: yellow; */
+}
+.card_left{
+    width: 75%;
+    height: 70px;
+    /* background-color: yellow; */
+}
+
+.card_left input {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 42px;
+    padding: 0 15px;
+    border: 1px solid var(--light);
+    background-color: #eceff1;
+    border-radius: 21px;
+}
+
+.card_left input:focus {
+    outline: none;
+}
+
+.card_right{
+    width: 25%;
+    height: 70px;
+    /* background-color: rgb(14, 52, 219); */
+}
+
+.card_right a{
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--light);
+    background-color: var(--blue);
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/name-type.png');
+    background-repeat: no-repeat;
+    background-position: top 12px left 14px;
+    border-radius: 50%;
+}
+
+
+/* userlist */
+ul{
+    list-style: none;
+    border: none;
+}
+.people {
+    margin-left: -1px;
+    width: 100%;
+}
+.person {
+    position: relative;
+    width: 100%;
+    padding: 12px 10% 16px;                                                                                                                                                                                                 /* t-x-b */
+    cursor: pointer;
+    background-color: var(--white);}
+
+/* .person:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    width: 90%;
+    height: 1px;
+    content: '';
+    background-color: var(--light);
+    transform: translate(-50%, 0);
+    } */
+img {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.name {
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--dark);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+.time {
+    font-size: 14px;
+    position: absolute;
+    top: 16px;
+    right: 10%;
+    padding: 0 0 5px 5px;  /*trbl*/
+    color: var(--grey);
+    /* background-color: var(--white); */
+}
+.preview {
+    font-size: 14px;
+    display: inline-block;
+    overflow: hidden !important;
+    width: 70%;
+    white-space: nowrap;                                                                        /*1 l1n3 str*/
+    text-overflow: ellipsis;                                                                        /*...*/
+    color: var(--grey);
+}
+.person:hover {
+    border: 0;
+    background-color: var(--blue);}
+span {
+    color: var(--white);
+    background: transparent;
+}
+/* userlist */
+
+
+
+/* right portion startes here*/
+.right_div{
+    width: 65%;
+    height: 100px;
+}
+
+.to_div{
+    padding: 20px;
+    background-color: var(--light);
+}
+.to_div p{
+    font-weight: bold;
+    color: var(--grey);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.to_div span{
+    color: var(--black);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.chat{
+    position: relative;
+    overflow: hidden;
+    padding: 0 35px 92px;
+    border-width: 1px 1px 1px 0;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.bubble {
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    clear: both;
+    margin-bottom: 8px;
+    padding: 13px 14px;
+    vertical-align: top;
+    border-radius: 5px;
+}
+.bubble:before {
+        position: absolute;
+        top: 19px;
+        display: block;
+        width: 8px;
+        height: 6px;
+        content: '\00a0';
+        transform: rotate(29deg) skew(-35deg);
+    }
+    .bubble.you {
+        float: left;
+        color: var(--white);
+        background-color: var(--blue);
+        align-self: flex-start;
+        animation-name: slideFromLeft;
+    }
+        .bubble.you:before {
+            left: -3px;
+            background-color: var(--blue);
+        }
+    
+    .bubble.me {
+        float: right;
+        color: var(--dark);
+        background-color: #eceff1;
+        align-self: flex-end;
+        animation-name: slideFromRight;
+    }
+        .bubble.me:before {
+            right: -3px;
+            background-color: #eceff1;
+        }
