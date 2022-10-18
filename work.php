@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="./css/work.css" />
     <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/header.css" />
+    <link rel="shortcut icon" href="img/favicon_.png" />
   </head>
   <body>
     <?php 
         session_start();
-        include('nav.php'); 
+        include('nav.php');
         include('dbConnect.php');
 
         // echo $email;
@@ -48,7 +49,7 @@
                 <?php echo $rows["details"]?>
             </p>
             <br><br>
-            <a href="./job_view.php?id=<?php echo $rows["job_id"]?>"><p class="job-toggle" id="viewjob">view job</p></a>
+            <a href="./job_view.php?id=<?php echo $rows["job_id"]?>"><p class="job-toggle" id="viewjob">VIEW JOB</p></a>
             <!-- <script>
         document.getElementById("viewjob").addEventListener("click", function(){ 
             alert("Hello World!"); 

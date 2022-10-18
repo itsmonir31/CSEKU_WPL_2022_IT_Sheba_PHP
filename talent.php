@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/talent.css" />
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="shortcut icon" href="img/favicon_.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -36,8 +37,8 @@
             <h3 class="name"><?php echo $rows["name"]; ?></h3>
             <p class="title"><?php echo $rows["tag_line"]; ?></p>
             <div class="action_btn_div">
-              <button type="button" class="btn">Hire Me</button>
-              <a class="btn_msg" href="./message.php"><img src="https://cdn-icons-png.flaticon.com/512/61/61516.png"/></a>
+              <button type="button" class="btn"><a href="hire.php?t_id=<?php echo $rows["id"];?>">Hire Me</a></button>
+              <!-- <a class="btn_msg" href="./message.php"><img src="https://cdn-icons-png.flaticon.com/512/61/61516.png"/></a> -->
             </div>
             
           </div><p class="description"><?php echo $rows["about"]; ?></p>

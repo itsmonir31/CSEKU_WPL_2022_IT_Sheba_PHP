@@ -170,6 +170,8 @@ body {
   text-transform: uppercase;
 }
 .wrapper .description {
+  height: 100px;
+  overflow: hidden;
   margin-top: 15px;
   color: #080911;
   font-size: 14px;
@@ -247,6 +249,16 @@ body {
 /* msg btn css */
 .action_btn_div {
   display: flex;
+}
+
+.action_btn_div a {
+  text-decoration: none;
+  color: white;
+}
+
+.action_btn_div a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .action_btn_div img {

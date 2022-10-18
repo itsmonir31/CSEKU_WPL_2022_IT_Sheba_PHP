@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/job_view.css" />
     <link rel="stylesheet" href="css/alert.css" />
+    <link rel="stylesheet" href="css/bid_list.css" />
+    <link rel="shortcut icon" href="img/favicon_.png" />
     <!-- <link rel="stylesheet" href="css/login.css" /> -->
   </head>
   <body>
@@ -63,51 +65,31 @@
         } ?></h1>
       </div>
 
+      <?php 
+        if(isset($_SESSION['usr_email'])){
+          $email = $_SESSION['usr_email'];
+          // echo $email;
 
-      <br><br><br>
-      <div class="title__container apply">
-        <?php
-                if (isset($_SESSION['bid_message'])){ ?>
-                <div class="alert alert-<?=$_SESSION['bid_msg_type']?>">
-            <?php
-                echo $_SESSION['bid_message'];
-                unset($_SESSION['bid_message']);
-                unset($_SESSION['bid_msg_type']);
-            ?>
-                </div><br>
-            <?php }?>
-        <h2 class="heading">Apply on this Job:</h2>
-            <form action="be_bid.php" class="form" method="POST">
-            
-            <?php if ($rows["negotiable"] == 0) { ?>
-              <div class="form__div">
-                <input type="number" class="form__input" placeholder=" " name="amount" >
-                <label for="" class="form__label" style="color:gray;">Your Demand   ---you can demand less or equal <?php echo $rows["max_budget"]?> BDT---</label>
-              </div>
-            <?php }else{ ?>
-              <div class="form__div">
-                <input type="number" class="form__input" placeholder=" " name="amount">
-                <label for="" class="form__label">Your Demand?</label>
-              </div>
-            <?php } ?>
-
-            
-            
-
-            <div class="form__div">
-                <input type="text" class="form__input" placeholder=" " name="note">
-                <input type="hidden" class="form__input" placeholder=" " name="job_id" value="<?php echo $rows["job_id"]?>">
-                <label for="" class="form__label">Notes</label>
-            </div>
-            <!-- <p>Forget password... <a href="forget_password.php">Reset</a> </p><br> -->
-
-            <input type="submit" class="form__button" value="SUBMIT"><br>
-            
-        </form>
-      </div>
-
-
-      
+          $sql_ = "SELECT * FROM users WHERE email = '$email'";
+          $qry_ = mysqli_query($conn,$sql_);
+          $rows_ = mysqli_fetch_assoc($qry_);
+          if($rows_["type"] == 2) {?>
+              <br><br><br>
+            <?php  include('bid_form.php'); 
+            }
+        }else{
+          include('bid_form.php');
+        }  
+        ?>
     </div>
+  </div>
+  <?php 
+    if(isset($_SESSION['usr_email'])){
+      if($rows_["type"] == 1) {
+        include('bid_list.php'); 
+        }
+    }  
+    ?>
+
   </body>
 </html>

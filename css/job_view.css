@@ -7,6 +7,18 @@
   vertical-align: baseline;
 }
 
+body {
+  background-color: #b8f4fc3b;
+}
+
+/* bidlist */
+.container_ {
+  margin-top: 60px;
+  max-width: 90vw;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
 h2.heading {
   font-size: 18px;
   text-transform: uppercase;
@@ -26,6 +38,7 @@ h2.heading {
   color: green;
 }
 .body_ {
+  margin-bottom: 80px;
   border: 1px solid #000;
   border-radius: 5px;
   width: 50%;
@@ -94,7 +107,7 @@ h1 {
   left: 1rem;
   top: 1rem;
   padding: 0 0.25rem;
-  background-color: #fff;
+  background-color: #eefcfe;
   color: #01b3bf;
   font-size: var(--normal-font-size);
   transition: 0.3s;

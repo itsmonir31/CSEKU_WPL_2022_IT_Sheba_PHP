@@ -24,10 +24,10 @@
         </div>
         <div class="button__container">
           <button>
-            <a class="first" href="./talent.html">Find Experts</a>
+            <a class="first" href="./talent.php">Find Experts</a>
           </button>
           <button>
-            <a class="second" href="./work.html"> Find Services</a>
+            <a class="second" href="./work.php"> Find Works</a>
           </button>
         </div>
       </div>

@@ -86,6 +86,14 @@ body {
   height: 100px;
   overflow: hidden;
 }
+
+/* .card .job-toggle a,
+p {
+  color: white !important;
+} */
+#viewjob {
+  color: #3498db;
+}
 .card .job-toggle {
   position: relative;
   margin: auto;
@@ -93,6 +101,8 @@ body {
   text-align: center;
   width: 150px;
   align-self: flex-end;
+  color: #3498db !important;
+  /* background-color: #3498db; */
   border: 1px solid #3498db;
 }
 .card .job-toggle:hover {
@@ -105,5 +115,5 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
+  color: #3498db;
 }

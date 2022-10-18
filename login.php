@@ -42,7 +42,7 @@
                 <input type="password" class="form__input" placeholder=" " name="pass">
                 <label for="" class="form__label">Password</label>
             </div>
-            <!-- <p>Forget password... <a href="forget_password.php">Reset</a> </p><br> -->
+            <p>Not register yet?... <a href="signup.php">Signup</a> </p><br>
 
             <input type="submit" class="form__button" value="Sign In"><br>
             
