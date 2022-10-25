@@ -31,7 +31,7 @@
                 </div>
             <?php }?>
 
-            <h3 class="form__title">Admin Login</h3>
+            <h3 class="form__title">Login</h3>
 
             <div class="form__div">
                 <input type="text" class="form__input" placeholder=" " name="mail">
@@ -47,7 +47,10 @@
             <input type="submit" class="form__button" value="Sign In"><br>
             
         </form>
+
+        
     </div>
+    <?php include('footer_.php'); ?>
 </body>
 </html>
 

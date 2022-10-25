@@ -27,7 +27,8 @@
                     </div>
                 </div>
                 <div class="card-link-wrapper">
-                    <a href="" class="card-link">Hire</a>
+                    
+                    <button id="<?php echo $rows1["amount"];?>" class="card-link pay_btn" bh="<?php echo $rows1["bidder_email"];?>"  ji="<?php echo $rows1["job_id"]?>">HIRE</button>
                 </div>
               </div>
             </li>
@@ -36,3 +37,35 @@
     </div>
   </div>  
 <!-- bid list  end-->
+<!-- <a href="./.php?expert_id=<?php //echo $rows1["id"];?>" class="card-link">Hire</a>  ?>"-->
+
+<?php 
+$payment_be = "be_make_payment_for_job.php";
+include('payment_popup.php'); ?>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script>
+
+    $(document).ready(function(){
+      $('.pay_btn').click(function () { 
+        h_id = $(this).attr('id');
+
+        bidder_email = $(this).attr('bh');
+        job_id = $(this).attr('ji');
+        // alert(hiring_id)
+
+        s_charge = h_id*0.05;
+        total = Number(h_id) + Number(s_charge);
+
+        document.getElementById("input_amount").value=total;
+        document.getElementById("input_amount_").value=total;
+        document.getElementById("bidder_mail").value=bidder_email;
+        document.getElementById("job_id").value=job_id;
+        document.getElementById("taka").innerHTML=h_id;
+        document.getElementById("s_charge").innerHTML= s_charge;
+        document.getElementById("total").innerHTML = total;
+        location.href = "#payment_pop";
+        
+      });
+    })
+  </script>

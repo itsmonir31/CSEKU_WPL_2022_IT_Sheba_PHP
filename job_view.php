@@ -63,6 +63,10 @@
         }else {
           echo "No";
         } ?></h1>
+        <div class="dp">
+          <a href="./be_delete_posted_job.php?job_id=<?php echo $job_id?>" class="delete_post">DELETE</a>
+        </div>
+        <br>
       </div>
 
       <?php 

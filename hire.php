@@ -1,11 +1,15 @@
 <?php 
     session_start();
     include('dbConnect.php');
+    if (!isset($_GET['expert_id'])) {
+    header('location: login.php');
+  }
 
-    $t_id = $_GET["t_id"];
+
+    $expert_id = $_GET["expert_id"];
     // echo $t_id;
 
-    $sql = "SELECT* FROM users natural join user_info natural join pro_img WHERE id = $t_id";
+    $sql = "SELECT* FROM users natural join user_info natural join pro_img WHERE id = $expert_id";
     $qry = mysqli_query($conn,$sql);
     $rows = mysqli_fetch_assoc($qry)
 ?>
@@ -19,9 +23,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/hire.css" />
     <link rel="stylesheet" href="./css/post.css" />
+    <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/job_view.css" />
   </head>
   <body>
+    
+    <?php 
+    // include('nav.php');
+    ?>
+
+    <div class="body__">
     <div class="section__header">
       <div class="name__container">
         <h1><?php echo $rows["name"];?></h1>
@@ -45,20 +56,20 @@
 
       <div class="title__container apply">
                 <?php
-                        if (isset($_SESSION['bid_message'])){ ?>
-                        <div class="alert alert-<?=$_SESSION['bid_msg_type']?>">
+                        if (isset($_SESSION['hire_message'])){ ?>
+                        <div class="alert alert-<?=$_SESSION['hire_msg_type']?>">
                     <?php
-                        echo $_SESSION['bid_message'];
-                        unset($_SESSION['bid_message']);
-                        unset($_SESSION['bid_msg_type']);
+                        echo $_SESSION['hire_message'];
+                        unset($_SESSION['hire_message']);
+                        unset($_SESSION['hire_msg_type']);
                     ?>
                         </div><br>
                     <?php }?>
                 <h2 class="heading">Hire him/her</h2>
-                    <form action="be_bid.php" class="form" method="POST">
+                    <form action="be_hired.php?eemail=<?php echo $rows["email"];?>" class="form" method="POST">
                       <div class="form__div">
                         <input type="number" class="form__input" placeholder=" " name="amount" >
-                        <label for="" class="form__label" style="color:gray;">Your Demand </label>
+                        <label for="" class="form__label" style="color:gray;">Your Offer (BDT) </label>
                       </div>             
                     
 
@@ -73,7 +84,7 @@
                     
                 </form>
               </div>   
-
+      </div>
     <?php
       // include('bid_list.php'); 
     ?>

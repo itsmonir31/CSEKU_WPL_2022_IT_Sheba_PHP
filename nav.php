@@ -10,8 +10,8 @@
         
     ?>
         <div class="logo">
-            <img style="width: 35px; margin-right: 10px;" src="img/favicon_.png">
-            IT Sheba
+            <img src="img/favicon_.png">
+            <a href="./index.php">IT Sheba</a> 
         </div>
         <div class="hamburger">
             <div class="line"></div>
@@ -43,7 +43,7 @@
         <?php        
             if (isset($_SESSION['usr_email'])) {?>
                 <li><a class="" href="./be_logout.php">LOGOUT</a></li>
-                <a href="./profile.php"><img class="profile_ico" src="<?php echo $rows["url"]; ?>" width=40></a>
+                <a href="./profile.php"><img class="profile_ico" src="<?php echo $rows["url"]; ?>"></a>
             </ul>
                 
             <?php }else{  ?>

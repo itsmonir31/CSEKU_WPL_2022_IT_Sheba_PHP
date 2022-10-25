@@ -101,15 +101,18 @@ body {
 }
 
 .card .card-content {
+  height: 100px;
   margin: 20px 0;
   max-width: 85%;
 }
 
 .card .card-link-wrapper {
+  display: flex;
   margin-top: auto;
 }
 
 .card .card-link {
+  margin-right: 10px;
   display: inline-block;
   text-decoration: none;
   color: white;
@@ -152,7 +155,7 @@ body {
 
 @media (min-width: 700px) {
   .card {
-    flex-basis: calc(calc(100% / 3) - 20px);
+    flex-basis: calc(calc(100% / 2) - 20px);
   }
 
   .card:not(:last-child) {

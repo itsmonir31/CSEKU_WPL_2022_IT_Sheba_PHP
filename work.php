@@ -50,12 +50,6 @@
             </p>
             <br><br>
             <a href="./job_view.php?id=<?php echo $rows["job_id"]?>"><p class="job-toggle" id="viewjob">VIEW JOB</p></a>
-            <!-- <script>
-        document.getElementById("viewjob").addEventListener("click", function(){ 
-            alert("Hello World!"); 
-            // window.location.href = "job_view.php";
-        });
-    </script> -->
         </div>  
         <?php } ?>
     </div>

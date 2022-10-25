@@ -5,50 +5,35 @@
         header('location: login.php');
     }
 
-
+          echo
+          "
+          <script>
+            alert('Invalid Image Extension');
+            document.location.href = './profile.php';
+          </script>
+          ";
 if (isset($_POST)) {
-
-    $_GET['id'];
-
-
-	$qry = "SELECT* FROM users WHERE email = '$email' ";
-
-	$res = mysqli_query($conn, $qry);
-
-	$num = mysqli_num_rows($res);
-
-	if ($num > 1) {
-		header('location: signup.php');
-		$_SESSION['message'] = "This email already used.";
-		$_SESSION['msg_type'] = "danger";
-	}else if($password == $cpassword){
-		$enc = new enc();
-		$password1 = $enc->encry($password, 5);
-
-		$stmt = "INSERT INTO `users` (`id`, `name`, `email`, `password`, `type`) VALUES (NULL, '$name', '$email', '$password1', '$type');";
-		$stmt2 = "INSERT INTO `user_info`(`u_id`, `email`, `tag_line`, `address`, `about`, `web`, `fb`, `twt`) VALUES (null,'$email','You tag line','Where are you from?','Write about yourself','https://google.com/','https://facebook.com/','https://twitter.com/');";
-		$stmt3 = "INSERT INTO `pro_img`(`pi_id`, `email`, `url`) VALUES (NULL,'$email','img/avatar.jpeg');";
+    $hemail = $_SESSION["usr_email"]; //he will hire
+    echo $hemail;
+    $eemail = $_GET["eemail"];  //he would be hired
+    echo $eemail;
+    $demand = $_POST["amount"];
+    $note = $_POST["note"];
 
 
-		if (mysqli_query($conn,$stmt)) {
+    $stmt = "INSERT INTO `hire_user`(`h_id`, `e_email`, `h_email`, `demand`, `notes`) VALUES (null,'$eemail','$hemail','$demand','$note')";
 
-			mysqli_query($conn,$stmt2);
-			mysqli_query($conn,$stmt3);
-			header('location: profile.php');
-			$_SESSION['login'] = true;
-			$_SESSION['message'] = $email;
-			$_SESSION['usr_email'] = $email;
-			$_SESSION['msg_type'] = "success";
-		}else{
-			header('location: signup.php');
-			$_SESSION['message'] = "Server problem. We are SORRY! 😌";
-			$_SESSION['msg_type'] = "warning";
-		}
-				
-	}else{
-		header('location: signup.php');
-		$_SESSION['message'] = "Password not matched. 😌";
-		$_SESSION['msg_type'] = "info";
+
+    if (mysqli_query($conn,$stmt)) {
+        // header('location: profile.php');
+        // $_SESSION['login'] = true;
+        // $_SESSION['message'] = $email;
+        // $_SESSION['usr_email'] = $email;
+        // $_SESSION['msg_type'] = "success";
+    }else{
+        $_SESSION['hire_message'] = "Password not matched. 😌";
+        $_SESSION['hire_msg_type'] = "info";
+        header('location: hire.php');
 	}
 
 }

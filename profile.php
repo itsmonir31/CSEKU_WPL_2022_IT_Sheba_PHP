@@ -13,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="shortcut icon" href="img/favicon_.png" />
-    <link rel="stylesheet" href="./sass/main.css">
     <link rel="stylesheet" href="./css/profile.css">
     <link rel="stylesheet" href="./css/alert.css">
     <link rel="stylesheet" href="./css/header.css">
@@ -34,316 +33,78 @@
         $qry = mysqli_query($conn,$sql);
         $rows = mysqli_fetch_assoc($qry);    
     ?>
+
     <div class="container">
-        <div class="profile">
-            <div class="column3 info_sidebar">
-                <div class="profile-sidebar">
-                    <?php
-                if (isset($_SESSION['edit_msg'])){ ?>
-                    <div class="alert alert-<?=$_SESSION['edit_msg_type']?>">
-                        <?php
-                  echo $_SESSION['edit_msg'];
-                  unset($_SESSION['edit_msg']);
-                  unset($_SESSION['edit_msg_type']);
-                ?>
-                    </div>
-                    <?php }?>
-                    <div class="profile_userpic">
-                        <img src="<?php echo $rows["url"]?>" class="imag" alt="">
-                        <form id="test_form" class="test_form" action="up.php" method="POST" enctype="multipart/form-data">
-                            <div class="round">
-                                <?php $email = $rows["email"]; ?>
-                                <input type="hidden" name="email" value="<?php echo $email; ?>">
-                                <input type="file" name="file" id="pic" accept=".jpg, .jpeg, .png">
-                                <i class="fa fa-camera"></i>
-                            </div>
-                        </form>
-                    </div>
-                    <script type="text/javascript">
-                    document.getElementById("pic").onchange = function() {
-                        alert('Are you sure?');
-                        document.getElementById('test_form').submit();
-                    }
-                    </script>
-                    <!-- END SIDEBAR USERPIC -->
-                    <!-- SIDEBAR USER TITLE -->
-                    <div class="profile-usertitle">
-                        <div class="profile-usertitle-name">
-                            <?php
-                              echo $rows["name"];
-                            ?>
-                        </div>
-                        <div class="profile-usertitle-job">
-                            <?php echo $rows["tag_line"]; ?>
-                        </div>
-                    </div>
-                    <!-- END SIDEBAR USER TITLE -->
-                    <!-- SIDEBAR BUTTONS -->
-                    <div class="profile-userbuttons">
-                        <button type="button" class="btn btn_green">Follow</button>
-                        <button type="button" class="btn btn_blue">Message</button>
-                    </div>
-                    <!-- END SIDEBAR BUTTONS -->
-                    <div class="info_user">
-                        <h4 class="profile-desc-title">From</h4>
-                        <span class="profile-desc-text">
-                            <?php echo $rows["address"]; ?></span>
-                        <br /><br />
-                        <h4 class="profile-desc-title">About</h4>
-                        <span class="profile-desc-text">
-                            <?php echo $rows["about"]; ?></span>
-                        <br /><br />
-                        <div class="flex">
-                            <div class="socia_handler">
-                                <a href="<?php echo $rows["web"]; ?>">
-                                    <i class="fa fa-globe"></i>
-                                    <!-- tareq.com -->
-                                </a>
-                            </div>
-                            <div class="socia_handler">
-                                <a href="<?php echo $rows["fb"]; ?>">
-                                    <i class="fa fa-facebook"></i>
-                                    <!-- @sheikh -->
-                                </a>
-                            </div>
-                            <div class="socia_handler">
-                                <a href="<?php echo $rows["twt"]; ?>">
-                                    <i class="fa fa-twitter"></i>
-                                    <!-- S.tareq -->
-                                </a>
-                            </div>
-                        </div>
-                        <br>
-                        <!-- SIDEBAR MENU -->
-                        <div class="profile-usermenu">
-                            <ul class="nav">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-house"></i>
-                                        Overview </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-user"></i>
-                                        Account Settings </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-check-to-slot"></i>
-                                        Tasks </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-hand-holding-hand"></i>
-                                        Help </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- END MENU -->
-                        <div class="stat">
-                            <!-- STAT -->
-                            <div class="profile_stat">
-                                <div class="stat_div">
-                                    <div class="uppercase profile-stat-title"> 37 </div>
-                                    <div class="uppercase profile-stat-text"> Job Done </div>
-                                </div>
-                                <div class="stat_div">
-                                    <div class="uppercase profile-stat-title"> 51 </div>
-                                    <div class="uppercase profile-stat-text"> Ongoing </div>
-                                </div>
-                                <div class="stat_div">
-                                    <div class="uppercase profile-stat-title"> 61 </div>
-                                    <div class="uppercase profile-stat-text"> Cancelled </div>
-                                </div>
-                            </div>
-                            <!-- END STAT -->
-                        </div>
-                        <div class="edit_btn">
-                            <a class="button" href="#popup1">EDIT PROFILE</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- edit profile pop up -->
-            <div id="popup1" class="overlay">
-                <div class="popup">
-                    <h2>Edit Profile</h2>
-                    <a class="close" href="#">&times;</a>
-                    <div class="content">
-                        <form action="be_edit_profile.php" class="for" method="POST">
-                            <div class="form__div" style="margin-top: 40px">
-                                <input type="text" class="form__input" placeholder=" " name="tag_line" value="<?php echo $rows["tag_line"]; ?>">
-                                <label for="" class="form__label">Your tag line</label>
-                            </div>
-                            <div class="form__div" style="margin-top: 40px">
-                                <input type="text" class="form__input" placeholder=" " name="address" value="<?php echo $rows["address"]; ?>">
-                                <label for="" class="form__label">Where are you from?</label>
-                            </div>
-                            <div class="form__div" style="margin-top: 40px">
-                                <input rows="4" cols="50" type="text" class="form__input" placeholder=" " name="about" value="<?php echo $rows["about"]; ?>">
-                                <label for="" class="form__label">Tell us about yourself</label>
-                            </div>
-                            <div class="form__div" style="margin-top: 40px">
-                                <input type="text" class="form__input" placeholder=" " name="web" value="<?php echo $rows["web"]; ?>">
-                                <label for="" class="form__label">Website Url</label>
-                            </div>
-                            <div class="form__div" style="margin-top: 40px">
-                                <input type="text" class="form__input" placeholder=" " name="fb" value="<?php echo $rows["fb"]; ?>">
-                                <label for="" class="form__label">Facebook Url</label>
-                            </div>
-                            <div class="form__div" style="margin-top: 40px">
-                                <input type="text" class="form__input" placeholder=" " name="twt" value="<?php echo $rows["twt"]; ?>">
-                                <label for="" class="form__label">Twitter Url</label>
-                            </div>
-                            <input type="submit" class="form__button" value="UPDATE"><br>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- edit profile pop up -->
-            <div class="right_side">
-                <div class="bid_list">
-                    <div class="container_">
-                        <h2>Scrolling Card UI With Flexbox</h2>
-                        <ul class="cards">
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 1</h3>
-                                    <div class="card-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 2</h3>
-                                    <div class="card-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repudiandae magnam harum natus fuga et repellat in maiores.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 3</h3>
-                                    <div class="card-content">
-                                        <p>Phasellus ultrices lorem vel bibendum ultricies. In hendrerit nulla a ante dapibus pulvinar eu eget quam.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 4</h3>
-                                    <div class="card-content">
-                                        <p>Aenean posuere mauris quam, pellentesque auctor mi bibendum nec. Sed scelerisque lacus nisi, quis auctor lorem ornare vel.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 5</h3>
-                                    <div class="card-content">
-                                        <p>Vestibulum pharetra fringilla felis sit amet tempor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras et arcu sit amet est consequat feugiat. Nam ut sapien pulvinar.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 6</h3>
-                                    <div class="card-content">
-                                        <p>Donec ut tincidunt nisl. Vivamus eget eros id elit feugiat mollis. Nam sed sem quis libero finibus tempor.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 7</h3>
-                                    <div class="card-content">
-                                        <p>Aliquam eget nisl auctor, sollicitudin ipsum at, dignissim ligula. Donec tincidunt in elit et pellentesque. Integer posuere metus ac massa mollis euismod.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 8</h3>
-                                    <div class="card-content">
-                                        <p> Vivamus eget eros id elit feugiat mollis. Nam sed sem quis libero finibus tempor.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 9</h3>
-                                    <div class="card-content">
-                                        <p>Duis id congue turpis. Donec sodales porta felis, nec ultricies ante. Nam placerat vitae metus sit amet tempor. Aliquam ac dictum est.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 10</h3>
-                                    <div class="card-content">
-                                        <p>Pellentesque eget eros eget justo efficitur fermentum.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 11</h3>
-                                    <div class="card-content">
-                                        <p>Phasellus posuere nec nibh ut tincidunt. Aenean mollis turpis non eros posuere, at luctus leo hendrerit. Integer non libero sapien.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                            <li class="card">
-                                <div>
-                                    <h3 class="card-title">Service 12</h3>
-                                    <div class="card-content">
-                                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum ornare metus ac lectus scelerisque volutpat.</p>
-                                    </div>
-                                </div>
-                                <div class="card-link-wrapper">
-                                    <a href="" class="card-link">Learn More</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> <!-- right side end -->
+        <div class="con1">
+            <?php include('side_bar.php')?>
         </div>
+
+        <div class="con2">
+            <?php 
+                if ($rows['type'] == 1) {
+                    $sql1 = "SELECT* FROM jobs WHERE email = '$email'";?>
+                    <h2 class="heading">My Posted Job</h2>
+                <?php }elseif($rows['type'] == 2){
+                    $sql1 = "SELECT* FROM jobs WHERE assigned_email = '$email' and j_status=1"?>
+                    <h2 class="heading">My Onging Job</h2>
+                <?php }
+                    $qry1 = mysqli_query($conn,$sql1);?>
+                <?php include('posted_job.php');
+                
+                    if($rows['type'] == 2) {?>
+                        <br><br><h2 class="heading">My Hiring Offers</h2>
+                        <?php include('hiring_list.php');
+                    }elseif($rows['type'] == 1){?>
+                        <br><br><h2 class="heading">My Hiring Request</h2>
+                        <?php include('hiring_list.php');
+                    }?>
+        </div>
+
+        
+    <!-- <div class="info1">
     </div>
+    <div class="info2">
+        <div class="footer-widget">
+                                <div class="footer-widget-heading">
+                                    <h3>Useful Links</h3>
+                                </div>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">about</a></li>
+                                    <li><a href="#">services</a></li>
+                                    <li><a href="#">portfolio</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Our Services</a></li>
+                                    <li><a href="#">Expert Team</a></li>
+                                    <li><a href="#">Contact us</a></li>
+                                    <li><a href="#">Latest News</a></li>
+                                </ul>
+                            </div>
+    </div>
+    <div class="info3">
+        <div class="social-footer">
+            <div class="footer-social-icon">
+                <span class="span">Follow us</span>
+                <a href="#"><img src="img/ico/fb.png" style="width:40px;"></a>
+                <a href="#"><img src="img/ico/yt.png" style="width:40px;"></a>
+                <a href="#"><img src="img/ico/twt.png" style="width:40px;"></a>
+                <a href="#"><img src="img/ico/ins.png" style="width:40px;"></a>
+            </div>
+        </div>
+        
+    </div>
+    <div class="foot">
+            <div class="copyright-area">
+                <div class="copyright-text">
+                    <p>Copyright &copy; 2022, All Right Reserved <a href="https://www.facebook.com/CLUSTER.KU">CLUSTER</a></p>
+                </div>
+            </div>
+    </div> -->
+    </div>
+
+
+    
 </body>
 
 </html>

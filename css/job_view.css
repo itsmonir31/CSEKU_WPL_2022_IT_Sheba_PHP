@@ -150,3 +150,22 @@ h1 {
 .form__input:focus {
   border: 1.5px solid #01b3bf;
 }
+
+.delete_post {
+  background-color: red;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  float: inline-end;
+  align-items: flex-end;
+}
+
+.dp {
+  /* display: block;
+  align-items: flex-end; */
+  /* margin-right: 0;
+  margin-left: auto; */
+  float: right;
+  margin-bottom: 10px;
+}

@@ -18,7 +18,7 @@ body {
 
 .card__container {
   width: 100vw;
-  padding: 5px;
+  padding: 45px 10px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
