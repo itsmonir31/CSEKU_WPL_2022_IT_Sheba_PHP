@@ -1,8 +1,11 @@
 body {
-  background-color: #91ced4;
+  background-color: #b8f4fc3b;
 }
 body * {
   box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 .header {
@@ -98,10 +101,10 @@ input:focus {
   border: 1px solid #327a81;
   border-radius: 10px;
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-  max-width: calc(100% - 2em);
+  max-width: calc(100% - 1em);
   margin: 1em auto;
   overflow: hidden;
-  width: 800px;
+  width: 80vw;
 }
 
 table {
@@ -130,6 +133,29 @@ table tr:nth-child(2n) {
 }
 table tr:nth-child(2n + 1) {
   background-color: #edf7f8;
+}
+
+.act_btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.act_btn a {
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 10px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.act_btn a:first-child {
+  background-color: orange;
+}
+
+.act_btn a:last-child {
+  background-color: red;
 }
 
 @media screen and (max-width: 700px) {

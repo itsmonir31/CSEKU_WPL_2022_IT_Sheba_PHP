@@ -22,6 +22,7 @@
                     </div>
                     <div class="pos-nd-loc">
                     <p class="job-title"><?php echo $rows1["prblm_name"]?></p>
+                    <p class="location">Phone no.:<?php echo " ".$rows1["phone_no"]?></p>
                     <p class="location"><?php echo $rows1["street"].", ". $rows1["city_name"]?></p>
                     </div>
                     <div class="tags">

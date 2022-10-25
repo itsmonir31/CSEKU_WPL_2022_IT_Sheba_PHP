@@ -111,7 +111,7 @@
         </div>
 
       <br><br>
-      <h2 class="heading">Location</h2>
+      <h2 class="heading">Contact & Location</h2>
         <div class="grid">
           <div class="col-2-3">
             <div class="controls">
@@ -155,11 +155,15 @@
               <label for="post-code">Post Code</label>
             </div>         
           </div>
+          <!-- <div class="controls">
+            <input type="text" id="phone_no" class="floatLabel" name="phone_no" required="">
+            <label for="phone_no">Phone No.</label>
+          </div> -->
         </div>
-        <!-- <div class="controls">
-          <input type="text" id="country" class="floatLabel" name="country">
-          <label for="country">Country</label>
-        </div> -->
+        <div class="controls">
+          <input type="text" id="phone_no" class="floatLabel" name="phone_no" value="+880 ">
+          <label for="phone_no">Phone no.</label>
+        </div>
     </div>
     <br>
     <!--  Details -->

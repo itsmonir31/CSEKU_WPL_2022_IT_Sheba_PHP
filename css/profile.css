@@ -14,13 +14,16 @@ body {
   --main-padding: 5px;
 }
 
-.container {
+.container-profile {
   /* background-color: #15163f; */
   display: grid;
-  height: 100%;
+  height: fit-content;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "con1 con2 con2";
+  grid-template-rows: 1fr 0.2fr;
+  grid-template-areas:
+    "con1 con2 con2"
+    "footer footer footer";
+
   /* grid-gap: 0.2rem; */
   /* font-weight: 800; */
   /* text-transform: uppercase; */
@@ -42,11 +45,12 @@ body {
   padding: 10px 30px;
   border-bottom: 1px solid #373636;
 }
-/* .con3 {
-  padding: 10px 30px;
+.footer {
+  background-color: #06d85f;
+  /* padding: 10px 30px; */
   border-bottom: 1px solid #373636;
-  grid-area: con3;
-} */
+  grid-area: footer;
+}
 
 /* .info1 {
   padding: 10px 30px;
@@ -95,13 +99,14 @@ body {
 } */
 
 @media only screen and (max-width: 930px) {
-  .container {
+  .container-profile {
     height: 850px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
       "con1"
-      "con2";
+      "con2"
+      "footer";
   }
 }
 
@@ -340,13 +345,6 @@ body {
 }
 
 /* POPUP */
-/* body {
-  font-family: Arial, sans-serif;
-  background: url(http://www.shukatsu-note.com/wp-content/uploads/2014/12/computer-564136_1280.jpg)
-    no-repeat;
-  background-size: cover;
-  height: 100vh;
-} */
 
 h1 {
   text-align: center;
@@ -413,6 +411,33 @@ h1 {
   width: 30%;
   position: relative;
   transition: all 5s ease-in-out;
+}
+.see_all {
+  display: flex;
+  justify-content: space-between;
+}
+
+.see_all a {
+  cursor: pointer;
+  padding-top: 15px;
+  text-decoration: none;
+  color: white;
+  height: 30px;
+  margin-top: 50px;
+  padding: 0 10px;
+  background-color: #5b9bd1;
+  border-radius: 10px;
+}
+
+.see_all a:hover {
+  text-decoration: none;
+  color: #5b9bd1;
+  height: 30px;
+  margin-top: 50px;
+  padding: 0 10px;
+  background: transparent;
+  border: 1px solid #5b9bd1;
+  border-radius: 10px;
 }
 
 .popup h2 {

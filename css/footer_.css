@@ -80,8 +80,12 @@ body {
 }
 /* @media only screen and (max-width: 1320px) {
 }*/
-
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1620px) {
+  .container {
+    height: 520px;
+  }
+}
+@media only screen and (max-width: 1200px) {
   .container {
     height: 500px;
   }

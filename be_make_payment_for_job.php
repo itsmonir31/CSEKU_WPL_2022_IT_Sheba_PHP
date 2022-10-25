@@ -25,22 +25,22 @@ if (isset($_POST)) {
 
 
 		if (mysqli_query($conn,$stmt)) {
-echo "Success";
-			// header('location: profile.php');
-			// $_SESSION['edit_msg'] = "Successfully Paid";
-			// $_SESSION['edit_msg_type'] = "success";
+// echo "Success";
+			header('location: job_view.php?id='.$job_id);
+			$_SESSION['edit_msg'] = "Successfully Paid & hired";
+			$_SESSION['edit_msg_type'] = "success";
 		}else{
-            echo "fail-1";
-			// header('location: profile.php');
-			// $_SESSION['edit_msg'] = "Server problem. We are SORRY! 😌";
-			// $_SESSION['edit_msg_type'] = "warning";
+            // echo "fail-1";
+			header('location: job_view.php?id='.$job_id);
+			$_SESSION['edit_msg'] = "Server problem. We are SORRY! 😌";
+			$_SESSION['edit_msg_type'] = "warning";
 		}
 				
 	}else{
-        echo "fail-2";
-		// header('location: profile.php');
-		// $_SESSION['edit_msg'] = "Something Went Wrong";
-		// $_SESSION['edit_msg_type'] = "info";
+        // echo "fail-2";
+		header('location: job_view.php?id='.$job_id);
+		$_SESSION['edit_msg'] = "Something Went Wrong";
+		$_SESSION['edit_msg_type'] = "info";
 	}
 
 }

@@ -33,6 +33,16 @@
 
   <div class="body_">
     <div class="section__header">
+      <?php
+          if (isset($_SESSION['edit_msg'])){ ?>
+              <div class="alert alert-<?=$_SESSION['edit_msg_type']?>">
+                  <?php
+            echo $_SESSION['edit_msg'];
+            unset($_SESSION['edit_msg']);
+            unset($_SESSION['edit_msg_type']);
+          ?>
+              </div>
+          <?php }?>
       <div class="title__container">
         <h2 class="heading">Problem:</h2>
         <h1><span>Title</span> <?php echo ": ".$rows["prblm_name"]; ?></h1>

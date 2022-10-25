@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>All Jobs</title>
     <!-- <link rel="stylesheet" href="css/login.css"> -->
-    <link rel="stylesheet" href="css/posted_job.css">
+    <link rel="stylesheet" href="AdminPanel/css/posted_job.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
 
-    <?php include('..//dbConnect.php');
-    include() 
+    <?php 
+    include('./dbConnect.php'); 
+    session_start();
+    include('nav.php');
+    $user_email = $_SESSION['usr_email'];
 
+    $a = "SELECT * from users where email='$user_email'";
+    $r = mysqli_query($conn, $a);
+    $ar = mysqli_fetch_assoc($r);
+    if ($ar['type']==1) {
+        $q = "SELECT * from jobs where email='$user_email'";
+    }else{
+        $q = "SELECT * from jobs where assigned_email='$user_email'";
+    }
 
-    $q = "SELECT * from jobs";
+    // echo $user_email;
+
+    
     $res = mysqli_query($conn, $q);
 
 ?>
@@ -25,16 +39,18 @@
 
           <?php 
 
-              if (isset($_SESSION['message'])){ ?>
-                <div class="alert alert-<?=$_SESSION['msg_type']?>">
+              if (isset($_SESSION['sa_message'])){ ?>
+                <div class="alert alert-<?=$_SESSION['sa_msg_type']?>">
                   <?php
-                    echo $_SESSION['message'];
+                    echo $_SESSION['sa_message'];
+                    unset($_SESSION['sa_msg']);
+                    unset($_SESSION['sa_msg_type']);
                   ?>
                 </div>
              <?php }?>
 
 
-
+<br><br>
 <div class="table-users">
    <div class="header">Posted Jobs
     <!-- <div class="searchbox">
@@ -75,7 +91,7 @@
             <td> <?php echo $rows['j_status']; ?> </td>
             <td class="act_btn"> 
                 <a href="">EDIT</a> 
-                <a href="..//be_delete_posted_job_t.php?job_id=<?php echo $rows['job_id']?>">DELETE</a> 
+                <a href="be_delete_posted_job_t.php?job_id=<?php echo $rows['job_id']?>">DELETE</a> 
             </td>                          
         </tr>
 
@@ -108,23 +124,23 @@
 
 
 <script>
-    $(document).ready(function(){
-        $('#search_text').keyup(function(){
-            var txt = $(this).val();
-            if (txt != '') {
+    // $(document).ready(function(){
+    //     $('#search_text').keyup(function(){
+    //         var txt = $(this).val();
+    //         if (txt != '') {
                 
-            }else{
-                $('#result').html('');
-                $.ajax({
-                    url: "search_fetch.php",
-                    method: "post",
-                    data: {search:txt},
-                    dataType: "text",
-                    success: function(data){
-                        $('#result').html(data);
-                    }
-                })
-            }
-        });
-    });
+    //         }else{
+    //             $('#result').html('');
+    //             $.ajax({
+    //                 url: "search_fetch.php",
+    //                 method: "post",
+    //                 data: {search:txt},
+    //                 dataType: "text",
+    //                 success: function(data){
+    //                     $('#result').html(data);
+    //                 }
+    //             })
+    //         }
+    //     });
+    // });
 </script>

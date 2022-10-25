@@ -6,6 +6,7 @@
 
 if ($_POST) {
 	$prblm_name = $_POST['prblm_name'];
+	$phone_no = $_POST['phone_no'];
 	$details = $_POST['details'];
 	$prblm_type = $_POST['prblm_type_'];
 	$dev_type = $_POST['dev_name_'];
@@ -20,7 +21,7 @@ if ($_POST) {
 	$negotiable = $_POST['negotiable'];
 
 
-	$stmt = "INSERT INTO `jobs`(`job_id`, `email`, `prblm_name`, `details`, `prblm_type`, `dev_type`, `dev_model`, `street`, `street_number`, `city_name`, `post_code`, `max_budget`, `negotiable`) VALUES (null,'$email','$prblm_name','$details','$prblm_type','$dev_type','$dev_model','$street','$street_number','$city_name','$post_code','$max_budget','$negotiable');";
+	$stmt = "INSERT INTO `jobs`(`job_id`, `email`,`phone_no`, `prblm_name`, `details`, `prblm_type`, `dev_type`, `dev_model`, `street`, `street_number`, `city_name`, `post_code`, `max_budget`, `negotiable`) VALUES (null,'$email', '$phone_no', '$prblm_name','$details','$prblm_type','$dev_type','$dev_model','$street','$street_number','$city_name','$post_code','$max_budget','$negotiable');";
 
 
 	if (mysqli_query($conn,$stmt)) {

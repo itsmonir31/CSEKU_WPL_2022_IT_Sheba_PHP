@@ -34,73 +34,44 @@
         $rows = mysqli_fetch_assoc($qry);    
     ?>
 
-    <div class="container">
+    <div class="container-profile">
         <div class="con1">
             <?php include('side_bar.php')?>
         </div>
 
         <div class="con2">
+            <div class="see_all">
             <?php 
                 if ($rows['type'] == 1) {
-                    $sql1 = "SELECT* FROM jobs WHERE email = '$email'";?>
-                    <h2 class="heading">My Posted Job</h2>
+                    $sql1 = "SELECT* FROM jobs WHERE email = '$email' and assigned_email=''";?>
+                    <h2 class="heading">My Posted Job</h2><a href="see_all_job.php">SEE ALL</a></div>
                 <?php }elseif($rows['type'] == 2){
-                    $sql1 = "SELECT* FROM jobs WHERE assigned_email = '$email' and j_status=1"?>
-                    <h2 class="heading">My Onging Job</h2>
+                    $sql1 = "SELECT* FROM jobs WHERE assigned_email = '$email' and customer_payment =0"?>
+                    <h2 class="heading">My Onging Job</h2><a href="see_all_job.php">SEE ALL</a></div>
                 <?php }
                     $qry1 = mysqli_query($conn,$sql1);?>
                 <?php include('posted_job.php');
                 
                     if($rows['type'] == 2) {?>
-                        <br><br><h2 class="heading">My Hiring Offers</h2>
+                    
+                        <br><br>
+                        <div class="see_all">
+                        <h2 class="heading">My Hiring Offers</h2><a href="see_all_hiring.php">SEE ALL</a></div>
                         <?php include('hiring_list.php');
                     }elseif($rows['type'] == 1){?>
-                        <br><br><h2 class="heading">My Hiring Request</h2>
+                        <br><br>
+                        <div class="see_all">
+                        <h2 class="heading">My Hiring Request</h2><a href="see_all_hiring.php">SEE ALL</a></div>
                         <?php include('hiring_list.php');
                     }?>
         </div>
 
-        
-    <!-- <div class="info1">
-    </div>
-    <div class="info2">
-        <div class="footer-widget">
-                                <div class="footer-widget-heading">
-                                    <h3>Useful Links</h3>
-                                </div>
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">about</a></li>
-                                    <li><a href="#">services</a></li>
-                                    <li><a href="#">portfolio</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">Our Services</a></li>
-                                    <li><a href="#">Expert Team</a></li>
-                                    <li><a href="#">Contact us</a></li>
-                                    <li><a href="#">Latest News</a></li>
-                                </ul>
-                            </div>
-    </div>
-    <div class="info3">
-        <div class="social-footer">
-            <div class="footer-social-icon">
-                <span class="span">Follow us</span>
-                <a href="#"><img src="img/ico/fb.png" style="width:40px;"></a>
-                <a href="#"><img src="img/ico/yt.png" style="width:40px;"></a>
-                <a href="#"><img src="img/ico/twt.png" style="width:40px;"></a>
-                <a href="#"><img src="img/ico/ins.png" style="width:40px;"></a>
-            </div>
+        <div class="footer">
+            
+            <?php include('footer_.php'); ?>
         </div>
         
-    </div>
-    <div class="foot">
-            <div class="copyright-area">
-                <div class="copyright-text">
-                    <p>Copyright &copy; 2022, All Right Reserved <a href="https://www.facebook.com/CLUSTER.KU">CLUSTER</a></p>
-                </div>
-            </div>
-    </div> -->
+
     </div>
 
 
