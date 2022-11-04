@@ -62,6 +62,14 @@
         <h1><span>City</span> <?php echo ": ".$rows["city_name"]; ?></h1>
       </div>
 
+<?php 
+        if(isset($_SESSION['usr_email'])){
+          $email = $_SESSION['usr_email'];
+          // echo $email;
+
+          $sql_ = "SELECT * FROM users WHERE email = '$email'";
+          $qry_ = mysqli_query($conn,$sql_);
+          $rows_ = mysqli_fetch_assoc($qry_);?>
 
       <br><br>
       <div class="title__container">
@@ -73,21 +81,18 @@
         }else {
           echo "No";
         } ?></h1>
-        <div class="dp">
+        
+       
+        <?php if($rows_["type"] == 1) {?>
+          <div class="dp">
           <a href="./be_delete_posted_job.php?job_id=<?php echo $job_id?>" class="delete_post">DELETE</a>
         </div>
-        <br>
+        <?php } ?>
+         <br> <br>
       </div>
 
-      <?php 
-        if(isset($_SESSION['usr_email'])){
-          $email = $_SESSION['usr_email'];
-          // echo $email;
-
-          $sql_ = "SELECT * FROM users WHERE email = '$email'";
-          $qry_ = mysqli_query($conn,$sql_);
-          $rows_ = mysqli_fetch_assoc($qry_);
-          if($rows_["type"] == 2) {?>
+      
+          <?php if($rows_["type"] == 2) {?>
               <br><br><br>
             <?php  include('bid_form.php'); 
             }
@@ -99,8 +104,9 @@
   </div>
   <?php 
     if(isset($_SESSION['usr_email'])){
-      if($rows_["type"] == 1) {
-        include('bid_list.php'); 
+      if($rows_["type"] == 1) {?>
+      
+        <?php include('bid_list.php'); 
         }
     }  
     ?>

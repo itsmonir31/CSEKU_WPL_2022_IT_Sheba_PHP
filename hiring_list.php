@@ -40,19 +40,8 @@
                 </div>
                 <!-- href="#payment_pop" -->
                 <div class="card-link-wrapper">
-                    <?php if($rows['type'] == 1) {
-                        if($rows1['customer_payment'] == 0){?>
-                          <button id="<?php echo $rows1["demand"];?>" class="card-link pay_btn" bh="<?php echo $rows1["h_id"];?>">PAY</button>
-                          <a href="./be_delete_hire_request.php?hiring_id=<?php echo $rows1["h_id"];?>" class="card-link" style="background-color: red;">Delete</a>
-                        <?php }else{?>
-                          <a href="" class="card-link" style="pointer-events: none; background-color: gray;">PAY </a>
-                          <a href="./be_delete_hire_request.php?hiring_id=<?php echo $rows1["h_id"];?>" class="card-link" style="background-color: red;">Delete</a>
-                    <?php 
-                        }
-                    }elseif($rows['type'] == 2){
-                        ?>
-                        <a href="./be_expert_accept_hiring.php?hiring_id=<?php echo $rows1["h_id"];?>" class="card-link">Accept</a>
-                    <?php }?>
+                  <button id="<?php echo $rows1["demand"];?>" class="card-link pay_btn" bh="<?php echo $rows1["h_id"];?>">PAY</button>
+                    
                     
                 </div>
               </div>

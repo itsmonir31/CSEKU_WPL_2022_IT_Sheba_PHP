@@ -4,15 +4,110 @@ body {
   font-family: sans-serif;
 }
 
-#wrapper {
-  height: 800px;
+.container_jobs {
+  /* background-color: #15163f; */
+  display: grid;
+  height: fit-content;
+  grid-template-columns: 0.2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "divCat divContent";
+  height: max-content;
+  /* grid-gap: 0.2rem; */
+  /* font-weight: 800; */
+  /* text-transform: uppercase; */
+  font-size: 12px;
+  /* color: #004d40; */
+  /* text-align: center; */
+}
+
+.category {
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  box-shadow: 0px 0px 20px -7px #525d6b;
+}
+
+.divCat {
+  width: 100%;
+  height: 100%;
+  /* background-color: #004d40; */
+  display: flex;
+  grid-area: divCat;
+  padding: 10px;
+  padding-left: 20px;
+  /* border-bottom: 1px solid #373636; */
+  /* border-right: 1px solid red; */
+}
+.divContent {
+  height: 100%;
+  /* background-color: #06d85f; */
+  grid-area: divContent;
+  padding: 10px 30px;
+  /* border-bottom: 1px solid #373636; */
+}
+
+/* .info1 {
+  padding: 10px 30px;
+  grid-area: info1;
+}
+
+.info2 {
+  padding: 10px 30px;
+  grid-area: info2;
+}
+
+.info3 {
+  padding: 10px 30px;
+  grid-area: info3;
+}
+
+.foot {
+  background: #202020;
+  grid-area: foot;
+  /* border-radius: var(--main-radius);
+  padding-top: var(--main-padding); */
+/* }  */
+
+/* @media only screen and (max-width: 1320px) {
+}
+
+@media only screen and (max-width: 1100px) {
+  .container {
+    height: 450px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr 1.2fr 0.1fr;
+    grid-template-areas:
+      "con1 con2 con3"
+      "info1 info2"
+      "info3"
+      "foot";
+  }
+} */
+
+.head_ {
+  text-align: center;
+}
+
+@media only screen and (max-width: 930px) {
+  .container_jobs {
+    height: 850px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "divCat"
+      "divContent";
+  }
+}
+
+.wrapper_ {
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.card {
+.card_ {
   flex-basis: 50%;
   margin: 20px;
   padding: 25px;
@@ -26,43 +121,44 @@ body {
       flex-direction:column;
     }
   } */
-.card .work-rate {
+.card_ .work-rate {
   display: flex;
   justify-content: space-between;
 }
-.card-1 .work-rate .yes {
+.card_-1 .work-rate .yes {
   color: #eee;
   background-color: green;
   padding: 5px 10px;
   border-radius: 20px;
 }
-.card-1 .work-rate .no {
+.card_-1 .work-rate .no {
   color: #eee;
   background-color: orange;
   padding: 5px 10px;
   border-radius: 10px;
 }
-.card-1 .work-rate .budget {
+.card_-1 .work-rate .budget {
   color: #eee;
   background-color: #a569bd;
   padding: 5px 10px;
   border-radius: 10px;
 }
 
-.card .pos-nd-loc {
+.card_ .pos-nd-loc {
   align-self: center;
 }
 .pos-nd-loc p:first-child {
   text-align: center;
   font-size: 30px;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .pos-nd-loc p:last-child {
   color: #3498db;
   text-align: center;
   /* text-decoration: underline; */
-  margin-top: 20px;
+  margin: 0;
 }
 .tags {
   text-align: center;
@@ -79,7 +175,7 @@ body {
   color: white;
   background-color: #3498db;
 } */
-.card .job-desc {
+.card_ .job-desc {
   /* padding: 2px 20px; */
   line-height: 1.3;
   margin-top: 20px;
@@ -87,14 +183,14 @@ body {
   overflow: hidden;
 }
 
-/* .card .job-toggle a,
+/* .card_ .job-toggle a,
 p {
   color: white !important;
 } */
 #viewjob {
   color: #3498db;
 }
-.card .job-toggle {
+.card_ .job-toggle {
   position: relative;
   margin: auto;
   padding: 10px 20px;
@@ -105,7 +201,7 @@ p {
   /* background-color: #3498db; */
   border: 1px solid #3498db;
 }
-.card .job-toggle:hover {
+.card_ .job-toggle:hover {
   color: white;
   background-color: #3498db;
   transition: 0.5s;

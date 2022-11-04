@@ -43,10 +43,10 @@
             <div class="see_all">
             <?php 
                 if ($rows['type'] == 1) {
-                    $sql1 = "SELECT* FROM jobs WHERE email = '$email' and assigned_email=''";?>
+                    $sql1 = "SELECT* FROM jobs WHERE email = '$email' and job_accept=0";?>
                     <h2 class="heading">My Posted Job</h2><a href="see_all_job.php">SEE ALL</a></div>
                 <?php }elseif($rows['type'] == 2){
-                    $sql1 = "SELECT* FROM jobs WHERE assigned_email = '$email' and customer_payment =0"?>
+                    $sql1 = "SELECT* FROM jobs WHERE assigned_email = '$email' and  job_accept=0"?>
                     <h2 class="heading">My Onging Job</h2><a href="see_all_job.php">SEE ALL</a></div>
                 <?php }
                     $qry1 = mysqli_query($conn,$sql1);?>

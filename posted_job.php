@@ -36,6 +36,20 @@
                         <?php echo $rows1["details"]?>
                     </p>
                     <a class="view_job_a" href="./job_view.php?id=<?php echo $rows1["job_id"]?>"><p class="job-toggle" id="viewjob">VIEW JOB</p></a>
+                    <?php
+                      if ($rows1['job_done']==1 and $rows['type']==1) {?>
+                      <div class="x">
+                        <a href="be_accept_job.php?job_id=<?php echo $rows1["job_id"]?>&e_email=<?php echo $rows1["assigned_email"]?>" class="acc_">Job Accept</a>
+                      </div>
+                    <?php  } elseif( $rows['type']==2 and $rows1['job_done']==0){?>
+                      <div class="x">
+                        <a href="be_submit_job.php?job_id=<?php echo $rows1["job_id"] ?>"  class="acc_">Submit Job</a>
+                      </div>
+                    <?php }if ($rows1['job_accept']==0 and $rows['type']==2 and $rows1['job_done']!=0) {?>
+                         <div class="x">
+                        <a href="" style="background-color: gray;" class="acc_">Job Submitted</a>
+                      </div>
+                      <?php } ?>
                     <!-- <div class="action_button">
                       <a href="">PAY</a>
                       <a href=""></a>

@@ -106,17 +106,17 @@
                             <!-- STAT -->
                             <div class="profile_stat">
                                 <div class="stat_div">
-                                    <div class="uppercase profile-stat-title"> 37 </div>
-                                    <div class="uppercase profile-stat-text"> Job Done </div>
+                                    <div class="uppercase profile-stat-title"> <?php echo $rows['earning']." ৳"; ?> </div>
+                                    <div class="uppercase profile-stat-text"> Earning </div>
                                 </div>
-                                <div class="stat_div">
+                                <!-- <div class="stat_div">
                                     <div class="uppercase profile-stat-title"> 51 </div>
                                     <div class="uppercase profile-stat-text"> Ongoing </div>
                                 </div>
                                 <div class="stat_div">
                                     <div class="uppercase profile-stat-title"> 61 </div>
                                     <div class="uppercase profile-stat-text"> Cancelled </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- END STAT -->
                         </div>

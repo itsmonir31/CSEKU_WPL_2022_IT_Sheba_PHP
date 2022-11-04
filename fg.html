@@ -1,0 +1,24 @@
+<?php
+	$conn = mysqli_connect("localhost", "root", "", "blog_samples");
+	
+	$post_at = "";
+	$post_at_to_date = "";
+	
+	$queryCondition = "";
+	if(!empty($_POST["search"]["post_at"])) {			
+		$post_at = $_POST["search"]["post_at"];
+		list($fid,$fim,$fiy) = explode("-",$post_at);
+		
+		$post_at_todate = date('Y-m-d');
+		if(!empty($_POST["search"]["post_at_to_date"])) {
+			$post_at_to_date = $_POST["search"]["post_at_to_date"];
+			list($tid,$tim,$tiy) = explode("-",$_POST["search"]["post_at_to_date"]);
+			$post_at_todate = "$tiy-$tim-$tid";
+		}
+		
+		$queryCondition .= "WHERE post_at BETWEEN '$fiy-$fim-$fid' AND '" . $post_at_todate . "'";
+	}
+
+	$sql = "SELECT * from posts " . $queryCondition . " ORDER BY post_at desc";
+	$result = mysqli_query($conn,$sql);
+?>

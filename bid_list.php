@@ -4,7 +4,7 @@
                 FROM job_bid 
                 Left join pro_img on pro_img.email = job_bid.bidder_email
                 Left join users on pro_img.email = users.email
-                  WHERE job_id = $job_id ";
+                  WHERE job_id = $job_id";
       // $ep = "SELECT* FROM pro_img natural join users, job_bid WHERE job_id = $job_id and users.email = job_bid.email";
       $qry1 = mysqli_query($conn,$sql1);
       // $rows1 = mysqli_fetch_assoc($qry1);
@@ -57,7 +57,7 @@ include('payment_popup.php'); ?>
         s_charge = h_id*0.05;
         total = Number(h_id) + Number(s_charge);
 
-        document.getElementById("input_amount").value=total;
+        document.getElementById("input_amount").value=Number(h_id);
         document.getElementById("input_amount_").value=total;
         document.getElementById("bidder_mail").value=bidder_email;
         document.getElementById("job_id").value=job_id;

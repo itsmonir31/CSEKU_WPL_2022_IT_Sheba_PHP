@@ -1,22 +1,22 @@
 <?php
 	session_start();
 	include('dbConnect.php');
-    if (!isset($_SESSION['login'])) {
-        header('location: login.php');
-    }
+    // if (!isset($_SESSION['login'])) {
+    //     header('location: login.php');
+    // }
 
-          echo
-          "
-          <script>
-            alert('Invalid Image Extension');
-            document.location.href = './profile.php';
-          </script>
-          ";
+        //   echo
+        //   "
+        //   <script>
+        //     alert('Invalid Image Extension');
+        //     document.location.href = './profile.php';
+        //   </script>
+        //   ";
 if (isset($_POST)) {
     $hemail = $_SESSION["usr_email"]; //he will hire
-    echo $hemail;
+    // echo $hemail;
     $eemail = $_GET["eemail"];  //he would be hired
-    echo $eemail;
+    // echo $eemail;
     $demand = $_POST["amount"];
     $note = $_POST["note"];
 
@@ -25,11 +25,11 @@ if (isset($_POST)) {
 
 
     if (mysqli_query($conn,$stmt)) {
-        // header('location: profile.php');
+        header('location: talent.php');
         // $_SESSION['login'] = true;
-        // $_SESSION['message'] = $email;
+        // $_SESSION['hire_message'] = "Hired";
         // $_SESSION['usr_email'] = $email;
-        // $_SESSION['msg_type'] = "success";
+        // $_SESSION['hire_msg_type'] = "success";
     }else{
         $_SESSION['hire_message'] = "Password not matched. 😌";
         $_SESSION['hire_msg_type'] = "info";

@@ -19,9 +19,10 @@ if (isset($_GET)) {
 
 
     $stmt = "DELETE FROM `jobs` WHERE job_id = '$job_id'";
-
+    $stmt2 = "DELETE FROM `job_bid` WHERE job_id = '$job_id'";
 
     if (mysqli_query($conn,$stmt)) {
+        mysqli_query($conn,$stmt2);
         header('location: profile.php');
         $_SESSION['edit_msg'] = "Succesful Deletion.";
         $_SESSION['edit_msg_type'] = "success";
